@@ -114,7 +114,7 @@ Assert error
 ```typescript
 /**
  * The main function!
- * @param suiteName - Name of the mocha describe that will be created 
+ * @param suiteName - Name of the mocha describe that will be created
  * @param target - A function that invokes the code under test and returns the result
  *          if target returns a promise, it is resolved before the result is passed to `assertOnResult` function
  * @param path - A path where the json schemata are located (includes json schemata in subdirectories)
@@ -175,5 +175,29 @@ interface FolderTestSchema<I, O, E> {
     // The value that code under test must equal
     //  if absent, will only test that the code under test does/doesn't throw an error
     expected?: O | E;
+}
+
+/**
+ * Logging functions
+ *
+ * These are used to interact with the log without having to
+ * directly call into console.log. These prepend messages with 
+ * level information and timestamps.
+ */
+export class Log {
+    // Log a message at the trace level
+    public static trace(msg: string): void;
+
+    // Log a message at the info level
+    public static info(msg: string): void;
+
+    // Log a message at the warn level
+    public static warn(msg: string): void;
+
+    // Log a message at the error level
+    public static error(msg: string): void;
+
+    // Log a message at the test level
+    public static test(msg: string): void;
 }
 ```

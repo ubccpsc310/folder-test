@@ -1,22 +1,48 @@
-# Folder Test
+# Project Support
+
+This support library eases development for CPSC 310 students, while allowing course staff to update the library during the term without changing student repositories. 
+
+## Logger
+
+Writing output to `console.log` is not allowed in the project, but the `Log` class exists to provide a mechanism for emitting text to standard out.
+
+```typescript
+/**
+ * Logging functions
+ *
+ * These are used to interact with the log without having to
+ * directly call into console.log. These prepend messages with 
+ * level information and timestamps.
+ */
+export class Log {
+    // Log a message at the trace level
+    public static trace(msg: string): void;
+
+    // Log a message at the info level
+    public static info(msg: string): void;
+
+    // Log a message at the warn level
+    public static warn(msg: string): void;
+
+    // Log a message at the error level
+    public static error(msg: string): void;
+
+    // Log a message at the test level
+    public static test(msg: string): void;
+}
+```
+
+## Folder Test
 
 Folder test is a package for dynamically generating batches of tests from external JSON files.
-
-## Usage
 
 1. Create a directory containing one JSON file for each test you wish to generate. These files must conform to the `FolderTestSchema` described in the [API](#api).
 1. Invoke `folderTest` from your test suite.
 1. Run your test suite.
 
-## Installation
+### Example
 
-```console
-$ yarn add --dev @ubccpsc310/folder-test
-```
-
-## Example
-
-### Code under test
+#### Code under test
 ```typescript
 /**
  * Converts a colour in RGB to a number
@@ -36,7 +62,7 @@ function rgbToNum(rgb: { r: number, g: number, b: number }): number {
 }
 ```
 
-### Dynamic folder test
+#### Dynamic folder test
 ```typescript
 import { expect } from 'chai'
 import {folderTest} from "@ubccpsc310/folder-test";
@@ -80,7 +106,7 @@ describe("Dynamic folder test", function () {
 });
 ```
 
-### ./test/resources/json-spec
+#### ./test/folderTest/resources/json-spec
 
 Assert result
 ```json
@@ -110,7 +136,7 @@ Assert error
 }
 ```
 
-## API
+### API
 ```typescript
 /**
  * The main function!
@@ -175,29 +201,5 @@ interface FolderTestSchema<I, O, E> {
     // The value that code under test must equal
     //  if absent, will only test that the code under test does/doesn't throw an error
     expected?: O | E;
-}
-
-/**
- * Logging functions
- *
- * These are used to interact with the log without having to
- * directly call into console.log. These prepend messages with 
- * level information and timestamps.
- */
-export class Log {
-    // Log a message at the trace level
-    public static trace(msg: string): void;
-
-    // Log a message at the info level
-    public static info(msg: string): void;
-
-    // Log a message at the warn level
-    public static warn(msg: string): void;
-
-    // Log a message at the error level
-    public static error(msg: string): void;
-
-    // Log a message at the test level
-    public static test(msg: string): void;
 }
 ```

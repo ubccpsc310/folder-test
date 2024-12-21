@@ -1,5 +1,5 @@
 import {FolderTestOptions, FolderTestSchemaWithFilename} from "./types";
-import Log from "./Log";
+import Log from "../logger/Log";
 
 const legalKeys = new Set(["title", "input", "errorExpected", "verbose", "expected", "filename"]);
 

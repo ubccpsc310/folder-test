@@ -7,7 +7,7 @@
         "Braxton Hall"
     ],
     "license": "GPL-3.0",
-    "version": "3.0.0",
+    "version": "3.0.1",
     "main": "build/index.js",
     "types": "build/index.d.ts",
     "engines": {
@@ -28,8 +28,8 @@
         "mocha": "10.2.0"
     },
     "scripts": {
-        "cover": "nyc --reporter text --reporter html yarn run test",
         "build": "tsc",
+        "cover": "nyc --reporter text --reporter html yarn run test",
         "test": "mocha --require ts-node/register test/**/*.spec.ts"
     }
 }

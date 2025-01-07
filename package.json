@@ -1,13 +1,14 @@
 {
-    "name": "@ubccpsc310/folder-test",
-    "description": "Load many tests from a folder",
-    "homepage": "https://github.com/falkirks/folder-test",
+    "name": "@ubccpsc310/project-support",
+    "description": "CPSC 310 Project Support Library",
+    "homepage": "https://github.com/ubccpsc310/project-support",
     "contributors": [
         "Noa Heyl",
-        "Braxton Hall"
+        "Braxton Hall",
+		"Reid Holmes"
     ],
     "license": "GPL-3.0",
-    "version": "3.0.1",
+    "version": "4.0.0",
     "main": "build/index.js",
     "types": "build/index.d.ts",
     "engines": {

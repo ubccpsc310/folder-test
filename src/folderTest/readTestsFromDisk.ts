@@ -1,5 +1,5 @@
 import {FolderTestSchemaWithFilename} from "./types";
-import Log from "./Log";
+import Log from "../logger/Log";
 import * as fs from "fs-extra";
 
 function attemptDirRead(currentPath: string): string[] {

@@ -1,5 +1,5 @@
 import {expect} from "chai";
-import {readTestsFromDisk} from "../src/readTestsFromDisk";
+import {readTestsFromDisk} from "../../src/folderTest/readTestsFromDisk";
 
 describe("Reading tests from disk", function () {
     const expected = [

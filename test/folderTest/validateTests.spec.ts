@@ -1,6 +1,6 @@
-import {FolderTestSchemaWithFilename} from "../src/types";
-import {validateTests} from "../src/validateTests";
-import {getDefaultOptions, joinWithDefaultOptions} from "../src/Options";
+import {FolderTestSchemaWithFilename} from "../../src/folderTest/types";
+import {validateTests} from "../../src/folderTest/validateTests";
+import {getDefaultOptions, joinWithDefaultOptions} from "../../src/folderTest/Options";
 import {expect} from "chai";
 
 describe("Test schema validation", function () {

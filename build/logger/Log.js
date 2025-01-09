@@ -31,40 +31,43 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Log = /** @class */ (function () {
     function Log() {
     }
+    Log.getDateString = function () {
+        return new Date().toLocaleString("en-CA", { hour12: false });
+    };
     Log.trace = function () {
         var msg = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             msg[_i] = arguments[_i];
         }
-        console.log.apply(console, __spreadArray(["<T> ".concat(new Date().toLocaleString(), ":")], __read(msg), false));
+        console.log.apply(console, __spreadArray(["<T> ".concat(Log.getDateString(), ":")], __read(msg), false));
     };
     Log.info = function () {
         var msg = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             msg[_i] = arguments[_i];
         }
-        console.info.apply(console, __spreadArray(["<I> ".concat(new Date().toLocaleString(), ":")], __read(msg), false));
+        console.info.apply(console, __spreadArray(["<I> ".concat(Log.getDateString(), ":")], __read(msg), false));
     };
     Log.warn = function () {
         var msg = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             msg[_i] = arguments[_i];
         }
-        console.warn.apply(console, __spreadArray(["<W> ".concat(new Date().toLocaleString(), ":")], __read(msg), false));
+        console.warn.apply(console, __spreadArray(["<W> ".concat(Log.getDateString(), ":")], __read(msg), false));
     };
     Log.error = function () {
         var msg = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             msg[_i] = arguments[_i];
         }
-        console.error.apply(console, __spreadArray(["<E> ".concat(new Date().toLocaleString(), ":")], __read(msg), false));
+        console.error.apply(console, __spreadArray(["<E> ".concat(Log.getDateString(), ":")], __read(msg), false));
     };
     Log.test = function () {
         var msg = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             msg[_i] = arguments[_i];
         }
-        console.log.apply(console, __spreadArray(["<X> ".concat(new Date().toLocaleString(), ":")], __read(msg), false));
+        console.log.apply(console, __spreadArray(["<X> ".concat(Log.getDateString(), ":")], __read(msg), false));
     };
     return Log;
 }());

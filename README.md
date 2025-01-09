@@ -203,3 +203,9 @@ interface FolderTestSchema<I, O, E> {
     expected?: O | E;
 }
 ```
+
+## Contributing
+
+* To deploy a new version (need to be a part of the `@ubccpsc310` npm organization (https://npmjs.com/settings/ubccpsc310/members)):
+    1. Update version number in `package.json`
+    2. `npm publish --access public`
